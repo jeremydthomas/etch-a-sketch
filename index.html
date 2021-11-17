@@ -8,6 +8,7 @@
 		<title>Etch-a-Sketch</title>
 	</head>
 	<body>
+		<button class="clear">Clear</button>
 		<div id="container"></div>
 
 		<script>
@@ -36,9 +37,7 @@
 
 			function clearBox(permahover) {
 				document.getElementById('container').innerText = '';
-
-
-
+				makeRows(16, 16);
 			}
 
 			makeRows(16, 16);
