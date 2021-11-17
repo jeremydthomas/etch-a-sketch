@@ -9,45 +9,70 @@
 	</head>
 	<body>
 		<button class="clear">Clear</button>
+		<button class="rainbow">Rainbow Brite</button>
+		<button class="black">Black</button>
 		<div id="container"></div>
 
 		<script>
 			const clearBtn = document.querySelector('.clear');
 			const boxFill = document.querySelector('#container');
 			const grids = document.querySelector('.grid-item');
+			const rainbowBtn = document.querySelector('.rainbow');
+			const blackBtn = document.querySelector('.black');
 
+			rainbowBtn.addEventListener('click', colorBox);
+			blackBtn.addEventListener('click', blackBox);
 			clearBtn.addEventListener('click', (e) => {
 				clearBox();
 			});
 
-			boxFill.addEventListener('mouseover', (e) => {
-				console.log('Mouse in');
-				e.target.setAttribute('id', 'permahover');
-			});
+			function colorBox() {
+				boxFill.addEventListener('mouseover', (e) => {
+					console.log('Mouse out');
+					let randomColor =
+						'#' + (((1 << 24) * Math.random()) | 0).toString(16);
 
-			boxFill.addEventListener('mouseout', (event) => {
-				console.log('Mouse out');
-			});
+					e.target.style.setProperty('--main-bg-color', randomColor);
+				});
+			}
+
+			function blackBox() {
+				boxFill.addEventListener('mouseover', (e) => {
+					console.log('Mouse in');
+					e.target.style.setProperty('--main-bg-color', 'black');
+				});
+			}
 
 			const container = document.getElementById('container');
 
 			function makeRows(rows, cols) {
 				container.style.setProperty('--grid-rows', rows);
 				container.style.setProperty('--grid-cols', cols);
+
 				for (c = 0; c < rows * cols; c++) {
 					let cell = document.createElement('div');
+
 					// cell.innerText = c + 1;
 					container.appendChild(cell).className = 'grid-item';
 				}
 			}
 
-			function clearBox(permahover) {
+			function clearBox() {
 				document.getElementById('container').innerText = '';
-				makeRows(16, 16);
-				// prompt('')
+				rows = prompt('how many rows do you want now?');
+				cols = prompt('how many columns do you want?');
+				if (rows > 100) {
+					rows = 100;
+				}
+				if (cols > 100) {
+					cols = 100;
+				}
+				makeRows(rows, cols);
+				blackBox();
 			}
 
 			makeRows(16, 16);
+			blackBox();
 		</script>
 	</body>
 </html>

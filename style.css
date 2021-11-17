@@ -1,6 +1,7 @@
 :root {
 	--grid-cols: 1;
 	--grid-rows: 1;
+	--main-bg-color: white;
 }
 
 #container {
@@ -11,7 +12,7 @@
 	height: 500px;
 	margin: 0 auto;
 
-    border: 0;
+	border: 0;
 	border-radius: 10px;
 	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.08);
 }
@@ -25,10 +26,7 @@
 	height: 1px; */
 	display: block;
 	overflow: hidden;
-}
-
-.grid-item:hover {
-	background-color: black;
+	background-color: var(--main-bg-color);
 }
 
 #permahover {
