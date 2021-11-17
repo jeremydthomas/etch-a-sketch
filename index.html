@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Etch-a-Sketch</title>
+	</head>
+	<body>
+		<div id="container"></div>
+
+		<script>
+			const boxFill = document.querySelector('#container');
+			const grids = document.querySelector('.grid-item');
+			boxFill.addEventListener('mouseover', (e) => {
+				console.log('Mouse in');
+				e.target.setAttribute('id', 'permahover');
+			});
+
+			boxFill.addEventListener('mouseout', (event) => {
+				console.log('Mouse out');
+			});
+
+			const container = document.getElementById('container');
+
+			function makeRows(rows, cols) {
+				container.style.setProperty('--grid-rows', rows);
+				container.style.setProperty('--grid-cols', cols);
+				for (c = 0; c < rows * cols; c++) {
+					let cell = document.createElement('div');
+					// cell.innerText = c + 1;
+					container.appendChild(cell).className = 'grid-item';
+				}
+			}
+
+			function clearBox(permahover) {
+				document.getElementById('container').innerText = '';
+
+
+
+			}
+
+			makeRows(16, 16);
+		</script>
+	</body>
+</html>
