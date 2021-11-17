@@ -12,8 +12,14 @@
 		<div id="container"></div>
 
 		<script>
+			const clearBtn = document.querySelector('.clear');
 			const boxFill = document.querySelector('#container');
 			const grids = document.querySelector('.grid-item');
+
+			clearBtn.addEventListener('click', (e) => {
+				clearBox();
+			});
+
 			boxFill.addEventListener('mouseover', (e) => {
 				console.log('Mouse in');
 				e.target.setAttribute('id', 'permahover');
@@ -38,6 +44,7 @@
 			function clearBox(permahover) {
 				document.getElementById('container').innerText = '';
 				makeRows(16, 16);
+				// prompt('')
 			}
 
 			makeRows(16, 16);
