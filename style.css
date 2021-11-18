@@ -6,17 +6,27 @@
 
 .vsc-initialized {
 	background-color: black;
+	position: relative;
+}
+
+.etch {
+	color: antiquewhite;
+	text-align: center;
+	font-size: 100px;
 }
 
 .outterPiece {
 	height: 600px;
 	width: 600px;
 	border: 1px solid black;
-	margin: 600px auto;
-	border: 0;
+	/* margin: 25vh auto; */
 	border-radius: 10px;
 	box-shadow: 0 0 15px 4px rgb(250, 249, 249);
 	background-color: red;
+	position: absolute;
+	top: 50%;
+	left: 50.2%;
+	margin: 100px -300px;
 }
 
 #container {
@@ -26,15 +36,17 @@
 	width: 500px;
 	height: 500px;
 	position: absolute;
-	top: 49%;
-	left: 35.3%;
+	top: 4%;
+	left: 8.5%;
+	margin: auto;
+
 	background-color: #d3d3d3;
 }
 
-.clear {
+.black {
 	position: absolute;
-	bottom: 10%;
-	left: 37%;
+	bottom: 4%;
+	left: 10%;
 	height: 30px;
 	width: 100px;
 
@@ -43,18 +55,18 @@
 
 .rainbow {
 	position: absolute;
-	bottom: 10%;
-	left: 57%;
+	bottom: 4%;
+	right: 10%;
 	height: 30px;
 	width: 100px;
 
 	border-radius: 10px;
 }
 
-.black {
+.clear {
 	position: absolute;
-	bottom: 10%;
-	left: 47.2%;
+	bottom: 4%;
+	left: 41%;
 	height: 30px;
 	width: 100px;
 
