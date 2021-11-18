@@ -11,7 +11,9 @@
 		<button class="clear">Clear</button>
 		<button class="rainbow">Rainbow Brite</button>
 		<button class="black">Black</button>
+		<div class="outterPiece">
 		<div id="container"></div>
+		</div>
 
 		<script>
 			const clearBtn = document.querySelector('.clear');
@@ -59,8 +61,8 @@
 
 			function clearBox() {
 				document.getElementById('container').innerText = '';
-				rows = prompt('how many rows do you want now?');
-				cols = prompt('how many columns do you want?');
+				rows = prompt('Please Enter a number under 100');
+				cols = rows;
 				if (rows > 100) {
 					rows = 100;
 				}
